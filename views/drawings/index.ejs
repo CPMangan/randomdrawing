@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title>Posts</title>
+        <link rel='stylesheet' href='/stylesheets/style.css' />
+    </head>
+
+    <body>
+        <p>
+            <a href="/">Create a new Drawing</a>
+        </p>
+        <ol>
+            <% for (var i = 0; i < drawings.length; i++) { %>
+                <% let drawing = drawings[i]; %>
+                
+                <li>
+                    <p>
+                        <small><a href="/drawings/<%= drawing._id %>">Title<strong><%= drawing.title %></strong></small>
+                        <br />
+                        <img src=" <%=drawing.image %>">
+                    </p>
+                </li>
+            <% } %>
+        </ol>
+    </body>
+
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title>Drawings</title>
+        <link rel='stylesheet' href='/stylesheets/style.css' />
+    </head>
+
+    <body>
+        <p>
+            <a href="/drawings">Back to Drawings</a>
+        </p>
+        <div>
+            <p>
+                Title:
+                <%= drawing.title %>
+            </p>
+            <p>
+                Image:
+            </p>
+            <img id="imageSource" src="<%= drawing.image %>"/>
+            <canvas id="drawingCanvas" width="800" height="600" name="canvas"></canvas>
+            <form method="POST" action="/drawings/<%= drawing._id %>">
+                <input type="hidden" name="_method" value="PUT">
+                <input type="text" name="title" placeholder="Title of Image">
+                <input type="submit" value="Update Drawing" name="saving"></input>
+            </form>
+            <form method="POST" action="/drawings/<%= drawing._id %>">
+                <input type="hidden" name="_method" value="DELETE">
+                <input type="submit" value="Delete Post">
+            </form>
+            
+            
+        </div>
+    </body>
+    <script src="/javascripts/canvas.js" ></script> 
+    <script src="/javascripts/redrawCanvas.js" ></script>
+    <script src="/javascripts/saveImage.js" ></script>
+
+</html>

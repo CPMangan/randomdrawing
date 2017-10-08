@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1><%= title %></h1>
+    <p>Welcome to <%= title %></p>
+    <canvas id="drawingCanvas" width="800" height="600" name="canvas"></canvas>
+    <form method="POST" action="/drawings">
+      <input type="text" name="title" placeholder="Title of Image">
+      <input type="submit" value="Post Submit" name="saving"></input>
+    </form>
+    <div id="render">
+    </div>
+  </body>
+  
+  <script src="/javascripts/canvas.js" ></script>
+  <script src="/javascripts/saveImage.js" ></script>
+
+</html>
