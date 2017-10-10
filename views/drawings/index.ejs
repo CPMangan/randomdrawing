@@ -2,27 +2,36 @@
 <html>
 
     <head>
-        <title>Posts</title>
+        <title>Drawings</title>
         <link rel='stylesheet' href='/stylesheets/style.css' />
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+        
     </head>
 
     <body>
         <p>
             <a href="/">Create a new Drawing</a>
         </p>
-        <ol>
-            <% for (var i = 0; i < drawings.length; i++) { %>
-                <% let drawing = drawings[i]; %>
-                
-                <li>
-                    <p>
-                        <small><a href="/drawings/<%= drawing._id %>">Title<strong><%= drawing.title %></strong></small>
-                        <br />
-                        <img src=" <%=drawing.image %>">
-                    </p>
-                </li>
-            <% } %>
-        </ol>
+        <div class="container">
+            <div class="row">
+                    <% for (var i = 0; i < drawings.length; i++) { %>
+                        <% let drawing = drawings[i]; %>
+                            <div class="col-sm-3">
+                                <div>
+                                        <a href="/drawings/<%= drawing._id %>"><img class="image_preview" src=" <%=drawing.image %>"></a>
+                                        <!-- this is the title of the image.you aint using this
+                                        <p>
+                                            <small><a href="/drawings/<%= drawing._id %>"><strong><%= drawing.title %></strong></small>
+                                        </p>
+                                        -->
+                                </div>
+                                
+                            </div>
+                    <% } %>
+            </div>
+        </div>
     </body>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+
 
 </html>

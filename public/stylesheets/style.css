@@ -6,10 +6,35 @@ body {
 a {
   color: #00B7FF;
 }
+.container {
+  max-width:1300px !important;
+}
 
 #drawingCanvas {
   background-color:black;
   position:relative;
   top:0;
   left:0;
+}
+.image_preview {
+  width:200px;
+  height:150px;
+  margin-bottom:25px;
+  background-color:black;
+}
+
+#imageSource {
+  display:none;
+}
+
+.brushSizes {
+  width:100%;
+  margin:0 0 25px 0;
+  background-color:orange;
+  text-align:center;
+}
+
+.colorSelector {
+  width:100%;
+  height:100px;
 }
