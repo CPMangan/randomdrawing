@@ -27,6 +27,10 @@ a {
   display:none;
 }
 
+#randomNumber {
+  display:none;
+}
+
 .brushSizes {
   width:100%;
   margin:0 0 25px 0;

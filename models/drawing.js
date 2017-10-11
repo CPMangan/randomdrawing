@@ -3,7 +3,8 @@ var Schema = mongoose.Schema;
 
 var drawingSchema = new Schema({
     title: String,
-    image: String
+    image: String,
+    randomNumber: Number
 });
 
 

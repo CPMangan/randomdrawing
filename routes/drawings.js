@@ -2,6 +2,7 @@ var express = require('express');
 var router = express.Router();
 var Drawing = require('../models/drawing');
 
+
 //create a show route for all of the drawings
 router.get('/', function(req, res) {
     Drawing.find(function(err, drawings) {
@@ -13,11 +14,17 @@ router.get('/', function(req, res) {
 router.post('/', function(req, res) {
   let title = req.body.title;
   let image = req.body.saving;
+  let randomNumber = req.body.randomNumber
 
-  Drawing.create({ title: title, image: image }, function(err) {
+  Drawing.create({ title: title, image: image , randomNumber: randomNumber }, function(err) {
     res.redirect('/drawings');
     console.log(req.body);
   });
+});
+
+// 'New' route that displays a form for a user to add a new post
+router.get('/new', function(req, res) {
+  res.render('drawings/new');
 });
 
 // 'Show' route for displaying the data from one drawing
